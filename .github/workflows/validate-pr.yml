@@ -1,0 +1,14 @@
+name: 'Validate PR title'
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
+
+jobs:
+  validate-pr-title:
+    uses: clouddrove-sandbox/terraform-shared-workflows/.github/workflows/validate-pr-title.yml@master
+    secrets:
+      repo-token : ${{ secrets.TEST_SECRETES }}
